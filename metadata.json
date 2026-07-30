@@ -1,0 +1,6 @@
+{
+  "name": "반 스터디 커뮤니티",
+  "description": "국어, 수학, 사회, 과학, 영어, 한국사 과목별 오늘 학습 내용 요약 공유 및 실시간 자동 저장 반 커뮤니티 앱",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
