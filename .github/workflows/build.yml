@@ -19,10 +19,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    # 깨진 wrapper.jar를 지우고 새로 정상 생성하는 단계
+    - name: Regenerate Gradle Wrapper
+      run: gradle wrapper
+
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
-    # [추가] 서명에 필요한 debug.keystore 파일 자동 생성
+    # 키스토어(서명) 에러 방지용 자동 생성
     - name: Generate debug keystore
       run: |
         keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
